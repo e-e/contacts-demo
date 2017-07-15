@@ -16,7 +16,7 @@
 		    </div>
 
 		    <div class="content">
-		    	<div class="detail-wrap">
+		    	<div class="detail-wrap" :title="contact.birth_date">
 		    		<div class="detail-title">Date of Birth</div>
 		    		<div class="detail-item">{{ contact.birth_date | formatDate }}</div>
 		    	</div>
@@ -115,7 +115,6 @@
 		},
 		filters: {
 			phoneNumber(value) {
-				// console.log("phone number: ", value);
 				return "(" + value.substr(0, 3) + ") " + value.substr(3, 3) + "-" + value.substr(6, 4);
 			},
 			formatDate(value) {
