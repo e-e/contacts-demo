@@ -69,7 +69,7 @@
 					try {
 						let res = JSON.parse(response.body);
 						this.contact.city = res.city;
-						this.contact.city = res.city;
+						this.contact.state = res.state;
 					} catch (e) {}
 					// console.log(response);						
 				}
