@@ -1,5 +1,7 @@
 <template>
-	<div class="section is-loading">loading</div>
+	<div class="section loading">
+		<img src="../assets/puff.svg">
+	</div>
 </template>
 
 <script>
@@ -8,6 +10,10 @@
 	}
 </script>
 
-<style>
-
+<style scoped>
+.loading {
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
 </style>
