@@ -68,6 +68,7 @@
 				if (response.ok) {
 					try {
 						let res = JSON.parse(response.body);
+						console.log('res', res);
 						this.contact.city = res.city;
 						this.contact.state = res.state;
 					} catch (e) {}
