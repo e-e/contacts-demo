@@ -64,13 +64,13 @@ export default {
   },
   created() {
     this.$http.get(this.$store.state.API.contacts).then(response => {
-      console.log(response);
+      // console.log(response);
       // let res = JSON.parse(response.body);
       this.$store.state.contacts = response.body.data;
       this.$store.state.usersLoaded = true;
-      console.log(this.$store.state);
+      // console.log(this.$store.state);
     }).catch(err => {
-      console.error("UH OH!", err);
+      // console.error("UH OH!", err);
     });
   }
 }

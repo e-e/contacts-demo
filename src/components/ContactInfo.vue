@@ -64,7 +64,7 @@
 			// this.$store.state.currentPage = this.contact.first_name + " " + this.contact.last_name;
 			this.$store.state.currentPage = "Contact Info";
 			this.$http.get(this.$store.state.API.zipcode + this.contact.zipcode + "/degrees").then(response => {
-				// console.log("ZIP RESPONSE", response);
+				console.log("ZIP RESPONSE", response);
 				if (response.ok) {
 					try {
 						let res = JSON.parse(response.body);
