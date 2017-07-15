@@ -12,7 +12,7 @@ export const store = new Vuex.Store({
 			add: "http://api.eric.wtf/add",
 			update: "http://api.eric.wtf/update",
 			delete: "http://api.eric.wtf/delete/",
-			zipcode: "https://www.zipcodeapi.com/rest/VIVEKgbZRd1veuiT7MG8uWcVYMqq2XYYGUCqaOq11rxgVP93BQb6Mo2Lascdpac6/info.json/56021/degrees",
+			zipcode: "https://www.zipcodeapi.com/rest/VIVEKgbZRd1veuiT7MG8uWcVYMqq2XYYGUCqaOq11rxgVP93BQb6Mo2Lascdpac6/info.json/",
 		},
 		zipcodeAppKey: "",
 		APPNAME: "MyContacts",
