@@ -67,12 +67,11 @@
 				// console.log("ZIP RESPONSE", response);
 				if (response.ok) {
 					try {
-						this.contact.city = response.body.city;
-						this.contact.city = response.body.city;
-					} catch (e) {
-
-					}
-					console.log(response);						
+						let res = JSON.parse(response.body);
+						this.contact.city = res.city;
+						this.contact.city = res.city;
+					} catch (e) {}
+					// console.log(response);						
 				}
 			}).catch(err => {
 				// console.log("zipcode api error: ", err);
