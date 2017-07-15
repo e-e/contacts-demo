@@ -14,33 +14,6 @@
 		components: {
 			"contact-list-group": ContactListGroup,
 		},
-		methods: {
-			// visibleContacts() {
-			// 	let re = new RegExp("[^a-zA-Z]", "g");
-			// 	let term = this.$store.state.searchText.replace(re, "").toLowerCase();
-			// 	console.log("TERM: ", term);
-			// 	if (!term.length) {
-			// 		return this.$store.state.contacts;
-			// 	}
-			// 	let contacts = [];
-			// 	switch (this.$store.state.settings.listmode) {
-			// 		case "last-first":
-			// 			contacts = this.$store.state.contacts.filter(contact => {
-			// 				let name = (contact.last_name + contact.first_name).toLowerCase().replace(re, "");
-			// 				return name.match(term);
-			// 			});
-			// 			break;
-
-			// 		case "first-last":
-			// 			contacts = this.$store.state.contacts.filter(contact => {
-			// 				let name = (contact.first_name + contact.last_name).toLowerCase().replace(re, "");
-			// 				return name.match(term);
-			// 			});
-			// 			break;
-			// 	}
-			// 	return contacts.sort(sortBy("last_name", { name: "first_name"}));
-			// }
-		},
 		computed: {
 			sortedContacts() {
 				return this.$store.state.contacts.sort(sortBy("last_name", { name: "first_name"}));

@@ -24,14 +24,11 @@
 		},
 		computed: {
 			contactsInGroup() {
-				console.log("contactsInGroup");
+				// console.log("contactsInGroup");
 				return this.contacts.filter(contact => {
 					return contact.last_name[0].toLowerCase() === this.contactGroup.toLowerCase();
 				});
 			}
-		},
-		created() {
-			console.log("ContactListGroup:contacts", this.contacts);
 		}
 	}
 </script>

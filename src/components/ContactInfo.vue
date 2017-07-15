@@ -64,8 +64,19 @@
 			// this.$store.state.currentPage = this.contact.first_name + " " + this.contact.last_name;
 			this.$store.state.currentPage = "Contact Info";
 			this.$http.get(this.$store.state.API.zipcode + this.contact.zipcode + "/degrees").then(response => {
-				console.log("ZIP RESPONSE", response);
-			}).catch(err => console.log("zipcode api error: ", err));
+				// console.log("ZIP RESPONSE", response);
+				if (response.ok) {
+					try {
+						this.contact.city = response.body.city;
+						this.contact.city = response.body.city;
+					} catch (e) {
+
+					}
+					console.log(response);						
+				}
+			}).catch(err => {
+				// console.log("zipcode api error: ", err);
+			});
 		},
 		data() {
 			return {
@@ -80,7 +91,7 @@
 		},
 		watch: {
 			'$route'(to, from) {
-				console.log("route changed!");
+				// console.log("route changed!");
 				this.contact = this.$store.getters.getContact(to.id);
 			}
 		},
@@ -107,7 +118,7 @@
 		},
 		filters: {
 			phoneNumber(value) {
-				console.log("phone number: ", value);
+				// console.log("phone number: ", value);
 				return "(" + value.substr(0, 3) + ") " + value.substr(3, 3) + "-" + value.substr(6, 4);
 			},
 			formatDate(value) {
@@ -126,7 +137,7 @@
 			deleteContact(value) {
 				this.isDeleting = true;
 				this.$http.get(this.$store.state.API.delete + this.contact.contact_id.toString()).then(response => {
-					console.log("DELETE RESPONSE: ", response);
+					// console.log("DELETE RESPONSE: ", response);
 					if (response.ok) {
 						let res = JSON.parse(response.body);
 						if (res.success) {
@@ -137,7 +148,7 @@
 						}
 					}
 				}).catch(err => {
-					console.log("DELETE ERROR: ", err);
+					// console.log("DELETE ERROR: ", err);
 				});
 			},
 		}

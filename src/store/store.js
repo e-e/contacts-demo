@@ -7,11 +7,11 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
 	state: {
 		API: {
-			contacts: "http://api.contacts.local/contacts",
-			contact: "http://api.contacts.local/contacts/",
-			add: "http://api.contacts.local/add",
-			update: "http://api.contacts.local/update",
-			delete: "http://api.contacts.local/delete/",
+			contacts: "http://api.eric.wtf/contacts",
+			contact: "http://api.eric.wtf/contacts/",
+			add: "http://api.eric.wtf/add",
+			update: "http://api.eric.wtf/update",
+			delete: "http://api.eric.wtf/delete/",
 			zipcode: "https://www.zipcodeapi.com/rest/VIVEKgbZRd1veuiT7MG8uWcVYMqq2XYYGUCqaOq11rxgVP93BQb6Mo2Lascdpac6/info.json/56021/degrees",
 		},
 		zipcodeAppKey: "",
@@ -38,7 +38,7 @@ export const store = new Vuex.Store({
 		visibleContacts: state => {
 			let re = new RegExp("[^a-zA-Z]", "g");
 			let term = state.searchText.replace(re, "").toLowerCase();
-			console.log("TERM: ", term);
+			// console.log("TERM: ", term);
 			if (!term.length) {
 				return state.contacts;
 			}
@@ -84,7 +84,7 @@ export const store = new Vuex.Store({
 			}
 		},
 		newContact(state, contact) {
-			console.log("ADDING CONTACT");
+			// console.log("ADDING CONTACT");
 			state.contacts.push(contact);
 		},
 		deleteContact(state, contactId) {

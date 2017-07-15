@@ -63,7 +63,6 @@
 			};
 		},
 		created() {
-			console.log("date_of_birth", this.newContact.date_of_birth, this.newContact);
 			this.$store.state.currentPage = "New Contact";
 		},
 		methods: {
@@ -71,7 +70,7 @@
 				e.preventDefault();
 				// if (this.pre)
 				if (!this.canSubmit) {
-					console.log("can't submit yet!", this.newContact);
+					// console.log("can't submit yet!", this.newContact);
 					return;
 				}
 				this.loading = true;
@@ -83,16 +82,16 @@
 					this.loading = false;
 					if (result.ok) {
 						let res = JSON.parse(result.body);
-						console.log("RES: ", res);
+						// console.log("RES: ", res);
 						if (res.success) {
 							this.newContact.contact_id = res.contact_id;
 							this.$store.commit("newContact", this.newContact);
 							this.$router.push({path: '/'})
 						}
 					}
-					console.log("RESULT: ", result);
+					// console.log("RESULT: ", result);
 				}).catch(err => {
-					console.log("POST ERROR: ", err);
+					// console.log("POST ERROR: ", err);
 				});
 			},
 			phoneFormat(e) {
@@ -135,14 +134,6 @@
 					&& this.newContact.zipcode.trim().length;
 			},
 			errors() {
-				// first_name: false,
-				// last_name: false,
-				// birth_date: false,
-				// phone_number: false,
-				// zipcode: false,
-				// date_added: false,
-				// date_updated: false,
-				console.log("typeof date_of_birth: ", typeof this.newContact.date_of_birth)
 				return {
 					first_name: !this.newContact.first_name.trim().length,
 					last_name: !this.newContact.last_name.trim().length,
@@ -152,11 +143,6 @@
 				}
 					
 			}
-			// submitBtnClasses() {
-			// 	return {
-
-			// 	}
-			// }
 		}
 	}
 </script>
